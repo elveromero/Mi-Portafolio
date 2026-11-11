@@ -322,4 +322,42 @@ h1, h2, h3, .logo {
   .hero h2 {
     font-size: 1.25rem;
   }
+
+   /* ==========================================
+   FILTROS DE PROYECTOS
+   ========================================== */
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.5rem 1.2rem;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-card);
+  color: var(--color-text);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 600;
+  font-family: var(--font-body);
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.filter-btn.active {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
+}
+
+.project-card {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
 }
