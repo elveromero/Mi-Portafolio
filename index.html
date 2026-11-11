@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio | Desarrollo Web</title>
+  
+  <!-- Tipografía Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navegación -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo">&lt;DevPortfolio /&gt;</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about">Sobre mí</a></li>
+          <li><a href="#skills">Habilidades</a></li>
+          <li><a href="#projects">Proyectos</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero / Presentación -->
+  <section class="hero">
+    <div class="container hero-content">
+      <h1>Hola, soy <span class="highlight">Tu Nombre</span></h1>
+      <h2>Desarrollador Web Frontend</h2>
+      <p>Apasionado por la construcción de interfaces accesibles, la arquitectura limpia y la lógica de programación.</p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary">Ver Proyectos</a>
+        <a href="#contact" class="btn btn-secondary">Contactar</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre mí -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">Sobre mí</h2>
+      <div class="about-card">
+        <p>Soy desarrollador frontend enfocado en crear aplicaciones y sitios web dinámicos, estructurados y optimizados. Me especializo en transformar ideas en código funcional utilizando buenas prácticas de desarrollo, control de versiones con Git y flujos de trabajo eficientes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Habilidades / Skills -->
+  <section id="skills" class="section bg-alt">
+    <div class="container">
+      <h2 class="section-title">Habilidades Técnicas</h2>
+      <div class="skills-grid">
+        <div class="skill-card">HTML5</div>
+        <div class="skill-card">CSS3 / Flexbox & Grid</div>
+        <div class="skill-card">JavaScript (ES6+)</div>
+        <div class="skill-card">Git & GitHub</div>
+        <div class="skill-card">Diseño Responsive</div>
+        <div class="skill-card">Lógica de Programación</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proyectos / Repositorios -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="section-title">Proyectos Destacados</h2>
+      <div class="projects-grid">
+        
+        <!-- Tarjeta de Proyecto 1 -->
+        <article class="project-card">
+          <div class="project-info">
+            <h3>Rueda Libre</h3>
+            <p>Plataforma web comercial con diseño responsive, componentes interactivos y validación de formularios.</p>
+            <div class="tags">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/TU_USUARIO/rueda-libre" target="_blank" rel="noopener">Código en GitHub</a>
+              <a href="https://TU_USUARIO.github.io/rueda-libre" target="_blank" rel="noopener">Demo en vivo</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Tarjeta de Proyecto 2 -->
+        <article class="project-card">
+          <div class="project-info">
+            <h3>Proyecto de Algoritmos</h3>
+            <p>Aplicación web enfocada en resolver estructuras complejas y lógica de programación en JavaScript.</p>
+            <div class="tags">
+              <span>JavaScript</span>
+              <span>Git</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/TU_USUARIO/nombre-repo" target="_blank" rel="noopener">Código en GitHub</a>
+              <a href="#" target="_blank" rel="noopener">Demo en vivo</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contact" class="section bg-alt">
+    <div class="container text-center">
+      <h2 class="section-title">Contacto</h2>
+      <p>¿Interesado en colaborar o revisar más de mi trabajo?</p>
+      <div class="contact-links">
+        <a href="https://github.com/TU_USUARIO" target="_blank" rel="noopener" class="btn btn-primary">Perfil de GitHub</a>
+        <a href="mailto:tuemail@ejemplo.com" class="btn btn-secondary">Enviar correo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container text-center">
+      <p>&copy; 2026 - Diseñado y desarrollado con Git & GitHub Pages</p>
+    </div>
+  </footer>
+
+</body>
+</html>
