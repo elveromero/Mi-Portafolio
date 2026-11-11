@@ -25,28 +25,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 2. Lógica de Modo Oscuro
+ // 2. Lógica de Modo Oscuro (Segura)
   const themeToggleBtn = document.getElementById('theme-toggle');
-  const userTheme = localStorage.getItem('theme');
+  
+  if (themeToggleBtn) {
+    const userTheme = localStorage.getItem('theme');
 
-  // Comprobar si el usuario ya tenía una preferencia guardada
-  if (userTheme === 'dark') {
-    document.body.classList.add('dark-mode');
-    themeToggleBtn.textContent = '☀️';
-  }
-
-  themeToggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    
-    if (document.body.classList.contains('dark-mode')) {
+    // Comprobar si el usuario ya tenía una preferencia guardada
+    if (userTheme === 'dark') {
+      document.body.classList.add('dark-mode');
       themeToggleBtn.textContent = '☀️';
-      localStorage.setItem('theme', 'dark');
-    } else {
-      themeToggleBtn.textContent = '🌙';
-      localStorage.setItem('theme', 'light');
     }
-  });
-});
+
+    themeToggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      
+      if (document.body.classList.contains('dark-mode')) {
+        themeToggleBtn.textContent = '☀️';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        themeToggleBtn.textContent = '🌙';
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  }
 
 // 3. Lógica de Validación del Formulario de Contacto
   const contactForm = document.getElementById('contact-form');
