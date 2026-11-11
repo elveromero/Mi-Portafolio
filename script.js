@@ -1,31 +1,43 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Lógica de Filtro de Proyectos
+
+  // ==========================================
+  // 1. FILTRO DE PROYECTOS
+  // ==========================================
   const filterButtons = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card');
 
-  filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      // Quitar la clase active del botón anterior
-      document.querySelector('.filter-btn.active').classList.remove('active');
-      // Agregar la clase active al botón presionado
-      button.classList.add('active');
-
-      const filterValue = button.getAttribute('data-filter');
-
-      // Mostrar u ocultar tarjetas según la categoría
-      projectCards.forEach(card => {
-        const cardTechs = card.getAttribute('data-tech');
-
-        if (filterValue === 'all' || cardTechs.includes(filterValue)) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
+  if (filterButtons.length > 0 && projectCards.length > 0) {
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Quitar la clase active del botón anterior
+        const activeBtn = document.querySelector('.filter-btn.active');
+        if (activeBtn) {
+          activeBtn.classList.remove('active');
         }
+        
+        // Agregar la clase active al botón presionado
+        button.classList.add('active');
+
+        const filterValue = button.getAttribute('data-filter');
+
+        // Mostrar u ocultar tarjetas según la categoría
+        projectCards.forEach(card => {
+          const cardTechs = card.getAttribute('data-tech') || '';
+
+          if (filterValue === 'all' || cardTechs.includes(filterValue)) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
       });
     });
-  });
+  }
 
- // 2. Lógica de Modo Oscuro (Segura)
+
+  // ==========================================
+  // 2. MODO OSCURO (DARK MODE)
+  // ==========================================
   const themeToggleBtn = document.getElementById('theme-toggle');
   
   if (themeToggleBtn) {
@@ -50,7 +62,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-// 3. Lógica de Validación del Formulario de Contacto
+
+  // ==========================================
+  // 3. VALIDACIÓN DEL FORMULARIO DE CONTACTO
+  // ==========================================
   const contactForm = document.getElementById('contact-form');
   
   if (contactForm) {
@@ -62,13 +77,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const showError = (input, message) => {
       input.classList.add('error');
       const errorSpan = document.getElementById(`${input.id}-error`);
-      errorSpan.textContent = message;
+      if (errorSpan) errorSpan.textContent = message;
     };
 
     const clearError = (input) => {
       input.classList.remove('error');
       const errorSpan = document.getElementById(`${input.id}-error`);
-      errorSpan.textContent = '';
+      if (errorSpan) errorSpan.textContent = '';
     };
 
     const isValidEmail = (email) => {
@@ -111,13 +126,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Si todo es válido
       if (isValid) {
-        successMessage.classList.remove('hidden');
+        if (successMessage) successMessage.classList.remove('hidden');
         contactForm.reset();
         
         // Ocultar mensaje de éxito después de 5 segundos
         setTimeout(() => {
-          successMessage.classList.add('hidden');
+          if (successMessage) successMessage.classList.add('hidden');
         }, 5000);
       }
     });
   }
+
+});
