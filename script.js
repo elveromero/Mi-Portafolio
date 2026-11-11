@@ -47,3 +47,75 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+// 3. Lógica de Validación del Formulario de Contacto
+  const contactForm = document.getElementById('contact-form');
+  
+  if (contactForm) {
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const messageInput = document.getElementById('message');
+    const successMessage = document.getElementById('form-success');
+
+    const showError = (input, message) => {
+      input.classList.add('error');
+      const errorSpan = document.getElementById(`${input.id}-error`);
+      errorSpan.textContent = message;
+    };
+
+    const clearError = (input) => {
+      input.classList.remove('error');
+      const errorSpan = document.getElementById(`${input.id}-error`);
+      errorSpan.textContent = '';
+    };
+
+    const isValidEmail = (email) => {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    };
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let isValid = true;
+
+      // Validar Nombre
+      if (nameInput.value.trim() === '') {
+        showError(nameInput, 'Por favor, ingresa tu nombre.');
+        isValid = false;
+      } else {
+        clearError(nameInput);
+      }
+
+      // Validar Correo
+      if (emailInput.value.trim() === '') {
+        showError(emailInput, 'Por favor, ingresa tu correo electrónico.');
+        isValid = false;
+      } else if (!isValidEmail(emailInput.value.trim())) {
+        showError(emailInput, 'Ingresa un correo electrónico válido.');
+        isValid = false;
+      } else {
+        clearError(emailInput);
+      }
+
+      // Validar Mensaje
+      if (messageInput.value.trim() === '') {
+        showError(messageInput, 'El mensaje no puede estar vacío.');
+        isValid = false;
+      } else if (messageInput.value.trim().length < 10) {
+        showError(messageInput, 'El mensaje debe tener al menos 10 caracteres.');
+        isValid = false;
+      } else {
+        clearError(messageInput);
+      }
+
+      // Si todo es válido
+      if (isValid) {
+        successMessage.classList.remove('hidden');
+        contactForm.reset();
+        
+        // Ocultar mensaje de éxito después de 5 segundos
+        setTimeout(() => {
+          successMessage.classList.add('hidden');
+        }, 5000);
+      }
+    });
+  }
