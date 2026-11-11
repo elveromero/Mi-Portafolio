@@ -360,4 +360,46 @@ h1, h2, h3, .logo {
 .project-card {
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
+
+   /* ==========================================
+   MODO OSCURO (VARIABLES Y ESTILOS)
+   ========================================== */
+body.dark-mode {
+  --color-bg: #0f172a;
+  --color-bg-alt: #1e293b;
+  --color-card: #1e293b;
+  --color-text: #f1f5f9;
+  --color-text-muted: #94a3b8;
+  --color-border: #334155;
+  --color-primary: #3b82f6;
+  --color-primary-hover: #60a5fa;
+}
+
+.theme-btn {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--border-radius);
+  transition: background-color 0.3s ease;
+}
+
+.theme-btn:hover {
+  background-color: var(--color-border);
+}
+
+/* Ajuste para mantener la estructura con el botón en el nav */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+}
 }
