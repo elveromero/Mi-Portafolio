@@ -67,14 +67,23 @@
     </div>
   </section>
 
-  <!-- Proyectos / Repositorios -->
+<!-- Proyectos / Repositorios -->
   <section id="projects" class="section">
     <div class="container">
       <h2 class="section-title">Proyectos Destacados</h2>
+      
+      <!-- Botones de Filtro -->
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="html">HTML5</button>
+        <button class="filter-btn" data-filter="css">CSS3</button>
+        <button class="filter-btn" data-filter="js">JavaScript</button>
+      </div>
+
       <div class="projects-grid">
         
         <!-- Tarjeta de Proyecto 1 -->
-        <article class="project-card">
+        <article class="project-card" data-tech="html css js">
           <div class="project-info">
             <h3>Rueda Libre</h3>
             <p>Plataforma web comercial con diseño responsive, componentes interactivos y validación de formularios.</p>
@@ -91,7 +100,7 @@
         </article>
 
         <!-- Tarjeta de Proyecto 2 -->
-        <article class="project-card">
+        <article class="project-card" data-tech="js">
           <div class="project-info">
             <h3>Proyecto de Algoritmos</h3>
             <p>Aplicación web enfocada en resolver estructuras complejas y lógica de programación en JavaScript.</p>
